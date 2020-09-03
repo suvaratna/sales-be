@@ -1,0 +1,4 @@
+/SalesApi/obj
+/SalesApi/bin
+/SalesApi/.vs
+*.csproj.user
