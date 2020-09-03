@@ -1,0 +1,122 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SalesApi</name>
+    </assembly>
+    <members>
+        <member name="M:SalesApi.Controllers.ProductsController.ListAsync">
+            <summary>
+            Lists all products.
+            </summary>
+            <returns>List of products.</returns>
+        </member>
+        <member name="M:SalesApi.Controllers.ProductsController.PostAsync(SalesApi.Resources.SaveProductResource)">
+            <summary>
+            Saves a new product.
+            </summary>
+            <param name="resource">Product data.</param>
+            <returns>Response for the request.</returns>
+        </member>
+        <member name="M:SalesApi.Controllers.ProductsController.PutAsync(System.Int32,SalesApi.Resources.SaveProductResource)">
+            <summary>
+            Updates an existing product according to an identifier.
+            </summary>
+            <param name="id">Product identifier.</param>
+            <param name="resource">Updated Product data.</param>
+            <returns>Response for the request.</returns>
+        </member>
+        <member name="M:SalesApi.Controllers.ProductsController.DeleteAsync(System.Int32)">
+            <summary>
+            Deletes a given product according to an identifier.
+            </summary>
+            <param name="id">Product identifier.</param>
+            <returns>Response for the request.</returns>
+        </member>
+        <member name="M:SalesApi.Controllers.ProductsController.GetProduct(System.Int32)">
+            <summary>
+            Get a single product according to identifier
+            </summary>
+            <param name="id">Product Identifier</param>
+            <returns>single product</returns>
+        </member>
+        <member name="M:SalesApi.Controllers.UsersController.ListAsync">
+            <summary>
+            Lists all users.
+            </summary>
+            <returns>List of users.</returns>
+        </member>
+        <member name="M:SalesApi.Controllers.UsersController.PostAsync(SalesApi.Resources.SaveUserResource)">
+            <summary>
+            Saves a new user.
+            </summary>
+            <param name="resource">User data.</param>
+            <returns>Response for the request.</returns>
+        </member>
+        <member name="M:SalesApi.Domain.Services.Communication.ProductListResponse.#ctor(System.Collections.Generic.IEnumerable{SalesApi.Domain.Models.Product})">
+            <summary>
+            Creates a success response.
+            </summary>
+            <param name="products">Saved product.</param>
+            <returns>Response.</returns>
+        </member>
+        <member name="M:SalesApi.Domain.Services.Communication.ProductListResponse.#ctor(System.String)">
+            <summary>
+            Creates am error response.
+            </summary>
+            <param name="message">Error message.</param>
+            <returns>Response.</returns>
+        </member>
+        <member name="M:SalesApi.Domain.Services.Communication.ProductResponse.#ctor(SalesApi.Domain.Models.Product)">
+            <summary>
+            Creates a success response.
+            </summary>
+            <param name="product">Saved product.</param>
+            <returns>Response.</returns>
+        </member>
+        <member name="M:SalesApi.Domain.Services.Communication.ProductResponse.#ctor(System.String)">
+            <summary>
+            Creates am error response.
+            </summary>
+            <param name="message">Error message.</param>
+            <returns>Response.</returns>
+        </member>
+        <member name="M:SalesApi.Domain.Services.Communication.UserListResponse.#ctor(System.Collections.Generic.IEnumerable{SalesApi.Domain.Models.User})">
+            <summary>
+            Creates a success response.
+            </summary>
+            <param name="users">Saved users.</param>
+            <returns>Response.</returns>
+        </member>
+        <member name="M:SalesApi.Domain.Services.Communication.UserListResponse.#ctor(System.String)">
+            <summary>
+            Creates am error response.
+            </summary>
+            <param name="message">Error message.</param>
+            <returns>Response.</returns>
+        </member>
+        <member name="M:SalesApi.Domain.Services.Communication.UserResponse.#ctor(SalesApi.Domain.Models.User)">
+            <summary>
+            Creates a success response.
+            </summary>
+            <param name="user">Saved user.</param>
+            <returns>Response.</returns>
+        </member>
+        <member name="M:SalesApi.Domain.Services.Communication.UserResponse.#ctor(System.String)">
+            <summary>
+            Creates am error response.
+            </summary>
+            <param name="message">Error message.</param>
+            <returns>Response.</returns>
+        </member>
+        <member name="F:SalesApi.Extensions.PasswordFormat.Hashed">
+            <summary>
+            Hashed
+            </summary>
+        </member>
+        <member name="F:SalesApi.Extensions.PasswordFormat.Encrypted">
+            <summary>
+            Encrypted
+            </summary>
+        </member>
+    </members>
+</doc>
