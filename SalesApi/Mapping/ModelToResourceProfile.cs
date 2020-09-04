@@ -14,6 +14,10 @@ namespace SalesApi.Mapping
         {
             CreateMap<Product, ProductResource>();
             CreateMap<User, UserResource>();
+            CreateMap<Customer, CustomerResource>();
+            CreateMap<Sales, SalesResource>();
+            CreateMap<SalesItem, SalesItemResource>();
+            CreateMap<Invoice, InvoiceResource>();
         }
     }
 }

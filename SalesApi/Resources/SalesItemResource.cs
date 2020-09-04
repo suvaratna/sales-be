@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace SalesApi.Domain.Models
+namespace SalesApi.Resources
 {
-    public class SalesDetails
+    public class SalesItemResource
     {
         public int Id { get; set; }
         public int SalesId { get; set; }

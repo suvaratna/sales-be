@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace SalesApi.Domain.Models
+namespace SalesApi.Resources
 {
-    public class Customer : CommonData
+    public class CustomerResource
     {
         public int Id { get; set; }
         public string Firstname { get; set; }

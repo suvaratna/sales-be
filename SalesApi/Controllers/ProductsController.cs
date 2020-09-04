@@ -108,7 +108,7 @@ namespace SalesApi.Controllers
         }
 
         /// <summary>
-        /// Get a single product according to identifier
+        /// Get a single product according to an identifier
         /// </summary>
         /// <param name="id">Product Identifier</param>
         /// <returns>single product</returns>
@@ -122,8 +122,8 @@ namespace SalesApi.Controllers
             {
                 return BadRequest(new ErrorResource(result.Message));
             }
-            var costCenterResource = _mapper.Map<Product, ProductResource>(result.Resource);
-            return Ok(costCenterResource);
+            var productResource = _mapper.Map<Product, ProductResource>(result.Resource);
+            return Ok(productResource);
         }
     }
 }

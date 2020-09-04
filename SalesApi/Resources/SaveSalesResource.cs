@@ -3,14 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace SalesApi.Domain.Models
+namespace SalesApi.Resources
 {
-    public class Sales : CommonData
+    public class SaveSalesResource
     {
-        public int Id { get; set; }
         public int CustomerId { get; set; }
         public decimal TotalAmount { get; set; }
         public bool IsPaid { get; set; }
-        public IList<SalesItem> SalesItem { get; set; } = new List<SalesItem>();
+        public IList<SalesItemResource> SalesItem { get; set; } = new List<SalesItemResource>();
     }
 }

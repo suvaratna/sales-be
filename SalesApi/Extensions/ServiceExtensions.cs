@@ -16,12 +16,18 @@ namespace SalesApi.Extensions
         {
             services.AddScoped<IProductRepository, ProductRepository>();
             services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<ICustomerRepository, CustomerRepository>();
+            services.AddScoped<ISalesRepository, SalesRepository>();
+            services.AddScoped<IInvoiceRepository, InvoiceRepository>();
         }
 
         public static void ConfigureService(this IServiceCollection services)
         {
             services.AddScoped<IProductService, ProductService>();
             services.AddScoped<IUserService, UserService>();
+            services.AddScoped<ICustomerService, CustomerService>();
+            services.AddScoped<ISalesService, SalesService>();
+            services.AddScoped<IInvoiceService, InvoiceService>();
         }
     }
 }

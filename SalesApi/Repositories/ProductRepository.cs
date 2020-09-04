@@ -52,7 +52,8 @@ namespace SalesApi.Repositories
         public async Task<IEnumerable<Product>> ListAsync()
         {
             using IDbConnection connection = DBManager.DbConnect();
-            return await connection.QueryAsync<Product>("[dbo].[GetAllProducts]", commandType: CommandType.StoredProcedure);
+            return await connection.QueryAsync<Product>("[dbo].[GetAllProducts]", 
+                commandType: CommandType.StoredProcedure);
         }
 
         public async Task AddAsync(Product product)
@@ -62,7 +63,8 @@ namespace SalesApi.Repositories
             param.Add("@Name", product.Name);
             param.Add("@Rate", product.Rate);
             param.Add("@CreatedBy", product.CreatedBy);
-            await connection.ExecuteAsync("[dbo].[AddProduct]", param, commandType: CommandType.StoredProcedure);
+            await connection.ExecuteAsync("[dbo].[AddProduct]", param, 
+                commandType: CommandType.StoredProcedure);
         }
 
         public async Task<Product> FindByIdAsync(int id)
@@ -70,7 +72,8 @@ namespace SalesApi.Repositories
             using IDbConnection connection = DBManager.DbConnect();
             DynamicParameters param = new DynamicParameters();
             param.Add("@Id", id);
-            return await connection.QueryFirstOrDefaultAsync<Product>("[dbo].[GetProductById]", param, commandType: CommandType.StoredProcedure);
+            return await connection.QueryFirstOrDefaultAsync<Product>("[dbo].[GetProductById]", param, 
+                commandType: CommandType.StoredProcedure);
         }
 
         public void Update(Product product)
@@ -81,7 +84,8 @@ namespace SalesApi.Repositories
             param.Add("@Name", product.Name);
             param.Add("@Rate", product.Rate);
             param.Add("@ModifiedBy", product.ModifiedBy);
-            connection.Execute("[dbo].[Updateproduct]", param, commandType: CommandType.StoredProcedure);
+            connection.Execute("[dbo].[Updateproduct]", param, 
+                commandType: CommandType.StoredProcedure);
         }
 
         public void Remove(Product product)
@@ -90,7 +94,8 @@ namespace SalesApi.Repositories
             DynamicParameters param = new DynamicParameters();
             param.Add("@Id", product.Id);
             param.Add("@DeletedBy", product.DeletedBy);
-            connection.Execute("[dbo].[Deleteproduct]", param, commandType: CommandType.StoredProcedure);
+            connection.Execute("[dbo].[DeleteProduct]", param, 
+                commandType: CommandType.StoredProcedure);
         }
     }
 }
