@@ -13,5 +13,7 @@ namespace SalesApi.Resources
         public int Quantity { get; set; }
         public decimal Rate { get; set; }
         public decimal Amount { get; set; }
+        public string Name { get; set; }
     }
+
 }

@@ -9,7 +9,7 @@ namespace SalesApi.Domain.Services
 {
     public interface ICustomerService
     {
-        Task<CustomerListResponse> ListAsync();
+        Task<CustomerListResponse> ListAsync(bool isWithoutSales);
         Task<CustomerResponse> SaveAsync(Customer customer);
         Task<CustomerResponse> UpdateAsync(int id, Customer customer);
         Task<CustomerResponse> DeleteAsync(int id);

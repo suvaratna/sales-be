@@ -8,7 +8,7 @@ namespace SalesApi.Domain.Repositories
 {
     public interface ICustomerRepository
     {
-        Task<IEnumerable<Customer>> ListAsync();
+        Task<IEnumerable<Customer>> ListAsync(bool isWithoutSales);
         Task AddAsync(Customer customer);
         Task<Customer> FindByIdAsync(int id);
         void Update(Customer customer);

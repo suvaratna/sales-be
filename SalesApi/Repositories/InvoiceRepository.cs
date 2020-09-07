@@ -24,5 +24,14 @@ namespace SalesApi.Repositories
             }
             
         }
+
+        public async Task<IEnumerable<BillItem>> GetBillDetails(int salesId)
+        {
+            using IDbConnection connection = DBManager.DbConnect();
+            DynamicParameters param = new DynamicParameters();
+            param.Add("@SalesId", salesId);
+            return await connection.QueryAsync<BillItem>("[dbo].[GetInvoiceById]", param,
+                commandType: CommandType.StoredProcedure);
+        }
     }
 }

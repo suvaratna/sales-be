@@ -12,4 +12,5 @@ namespace SalesApi.Resources
         public bool IsPaid { get; set; }
         public IList<SalesItemResource> SalesItem { get; set; } = new List<SalesItemResource>();
     }
+
 }

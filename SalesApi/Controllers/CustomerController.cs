@@ -13,7 +13,7 @@ namespace SalesApi.Controllers
     [Route("/api/customers")]
     [Produces("application/json")]
     [ApiController]
-    public class CustomerController : ControllerBase
+    public class CustomerController : BaseAuthController
     {
         private readonly ICustomerService _customerService;
         private readonly IMapper _mapper;
@@ -32,7 +32,23 @@ namespace SalesApi.Controllers
         [ProducesResponseType(typeof(IEnumerable<CustomerResource>), 200)]
         public async Task<IActionResult> ListAsync()
         {
-            var result = await _customerService.ListAsync();
+            var result = await _customerService.ListAsync(false);
+            if (!result.Success)
+            {
+                return BadRequest(new ErrorResource(result.Message));
+            }
+            var resources = _mapper.Map<IEnumerable<Customer>, IEnumerable<CustomerResource>>(result.Resource);
+            return Ok(resources);
+        }
+
+        /// <summary>
+        /// get orderlist details
+        ///</summary>
+        [HttpGet("GetCustomersWithoutSales")]
+        [ProducesResponseType(typeof(IEnumerable<CustomerResource>), 200)]
+        public async Task<IActionResult> GetCustomersWithoutSales()
+        {
+            var result = await _customerService.ListAsync(true);
             if (!result.Success)
             {
                 return BadRequest(new ErrorResource(result.Message));
@@ -125,5 +141,7 @@ namespace SalesApi.Controllers
             var customerResource = _mapper.Map<Customer, CustomerResource>(result.Resource);
             return Ok(customerResource);
         }
+
+        
     }
 }

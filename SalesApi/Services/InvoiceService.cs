@@ -20,6 +20,21 @@ namespace SalesApi.Services
             _invoiceRepository = invoiceRepository;
             _requestContext = requestContext;
         }
+
+        public async Task<InvoiceItemResponse> GetBillDetails(int salesId)
+        {
+            try
+            {
+                var result = await _invoiceRepository.GetBillDetails(salesId);
+
+                return new InvoiceItemResponse(result);
+            }
+            catch (Exception ex)
+            {
+                return new InvoiceItemResponse($"An error occurred when fetching invoice items: {ex.Message}");
+            }
+        }
+
         public async Task<InvoiceResponse> PayInvoice(Invoice invoice)
         {
             try

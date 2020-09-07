@@ -9,5 +9,6 @@ namespace SalesApi.Domain.Repositories
     public interface IInvoiceRepository
     {
         Task PayInvoice(Invoice invoice);
+        Task<IEnumerable<BillItem>> GetBillDetails(int salesId);
     }
 }

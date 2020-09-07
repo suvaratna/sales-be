@@ -46,5 +46,23 @@ namespace SalesApi.Controllers
             var invoiceResource = _mapper.Map<Invoice, InvoiceResource>(result.Resource);
             return Ok(invoiceResource);
         }
+
+        /// <summary>
+        /// Get a single Bill according to an identifier
+        /// </summary>
+        /// <param name="id">Bill Identifier</param>
+        /// <returns>single bill info</returns>
+        [ProducesResponseType(typeof(BillItem), 200)]
+        [ProducesResponseType(typeof(ErrorResource), 400)]
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetInvoiceById(int id)
+        {
+            var result = await _invoiceService.GetBillDetails(id);
+            if (!result.Success)
+            {
+                return BadRequest(new ErrorResource(result.Message));
+            }
+            return Ok(result.Resource);
+        }
     }
 }

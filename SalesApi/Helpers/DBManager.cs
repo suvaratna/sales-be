@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Configuration;
 
 namespace SalesApi.Helpers
 {
@@ -22,7 +23,7 @@ namespace SalesApi.Helpers
 
         public static string GetConnectionStrings()
         {
-            //return ConfigurationManager.ConnectionStrings["ConnectionDB"].ConnectionString;
+            //return ConfigurationManager.ConnectionStrings["SalesDB"].ConnectionString;
             return "Server=DESKTOP-19QM68S\\SQLEXPRESS;Initial Catalog=SalesTransactionDb;User ID=suva;Password=suva;";
         }
 

@@ -10,6 +10,11 @@
             </summary>
             <returns>List of customers.</returns>
         </member>
+        <member name="M:SalesApi.Controllers.CustomerController.GetCustomersWithoutSales">
+             <summary>
+             get orderlist details
+            </summary>
+        </member>
         <member name="M:SalesApi.Controllers.CustomerController.PostAsync(SalesApi.Resources.SaveCustomerResource)">
             <summary>
             Saves a new customer.
@@ -45,6 +50,13 @@
             </summary>
             <param name="resource">Invoice data.</param>
             <returns>Response for the request.</returns>
+        </member>
+        <member name="M:SalesApi.Controllers.InvoiceController.GetInvoiceById(System.Int32)">
+            <summary>
+            Get a single Bill according to an identifier
+            </summary>
+            <param name="id">Bill Identifier</param>
+            <returns>single bill info</returns>
         </member>
         <member name="M:SalesApi.Controllers.ProductsController.ListAsync">
             <summary>
@@ -235,6 +247,20 @@
             <returns>Response.</returns>
         </member>
         <member name="M:SalesApi.Domain.Services.Communication.UserResponse.#ctor(System.String)">
+            <summary>
+            Creates am error response.
+            </summary>
+            <param name="message">Error message.</param>
+            <returns>Response.</returns>
+        </member>
+        <member name="M:SalesApi.Domain.Services.InvoiceItemResponse.#ctor(System.Collections.Generic.IEnumerable{SalesApi.Domain.Models.BillItem})">
+            <summary>
+            Creates a success response.
+            </summary>
+            <param name="invoiceitems">Saved invoice items.</param>
+            <returns>Response.</returns>
+        </member>
+        <member name="M:SalesApi.Domain.Services.InvoiceItemResponse.#ctor(System.String)">
             <summary>
             Creates am error response.
             </summary>

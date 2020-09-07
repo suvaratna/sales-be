@@ -60,11 +60,11 @@ namespace SalesApi.Services
             }
         }
 
-        public async Task<CustomerListResponse> ListAsync()
+        public async Task<CustomerListResponse> ListAsync(bool isWithoutSales)
         {
             try
             {
-                return new CustomerListResponse(await _customerRepository.ListAsync());
+                return new CustomerListResponse(await _customerRepository.ListAsync(isWithoutSales));
             }
             catch (Exception ex)
             {

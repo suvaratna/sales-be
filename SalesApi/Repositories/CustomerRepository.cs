@@ -34,10 +34,12 @@ namespace SalesApi.Repositories
                 commandType: CommandType.StoredProcedure);
         }
 
-        public async Task<IEnumerable<Customer>> ListAsync()
+        public async Task<IEnumerable<Customer>> ListAsync(bool isWithoutSales)
         {
             using IDbConnection connection = DBManager.DbConnect();
-            return await connection.QueryAsync<Customer>("[dbo].[GetAllCustomers]",
+            DynamicParameters param = new DynamicParameters();
+            param.Add("@isWithoutSales", isWithoutSales);
+            return await connection.QueryAsync<Customer>("[dbo].[GetAllCustomers]", param,
                 commandType: CommandType.StoredProcedure);
         }
 

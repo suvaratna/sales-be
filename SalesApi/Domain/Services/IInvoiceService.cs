@@ -10,5 +10,7 @@ namespace SalesApi.Domain.Services
     public interface IInvoiceService
     {
         Task<InvoiceResponse> PayInvoice(Invoice invoice);
+
+        Task<InvoiceItemResponse> GetBillDetails(int salesId);
     }
 }
